@@ -6,20 +6,7 @@ using UnityEngine.UI;
 
 public class DradAndDrop : MonoBehaviour
 {
-    RectTransform rectTransform;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rectTransform = GetComponent<RectTransform>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Detect if clicked. If clicked, call function to move following mouse.
-        //If stopped clicked, stop following mouse.
-    }
+    public bool isClicked;
 
     private void OnMouseDrag()
     {
@@ -32,4 +19,6 @@ public class DradAndDrop : MonoBehaviour
         mousePos.z = 0;
         return mousePos;
     }
+
+    //video: https://www.google.com/search?q=how+to+make+a+drag+and+drop+in+unity+2d&rlz=1C1GCEU_enAR828AR828&oq=how+to+make+a+drag+and+drop+in+unity+2d&aqs=chrome..69i57j33i22i29i30l2.100799j0j9&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7a5114e6,vid:Tv82HIvKcZQ
 }
