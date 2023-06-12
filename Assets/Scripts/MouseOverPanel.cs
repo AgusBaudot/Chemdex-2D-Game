@@ -6,8 +6,15 @@ public class MouseOverPanel : MonoBehaviour
 {
     public bool isOver = false; //cuando haga las clases poner protected.
 
-    private void OnMouseOver()
+    private void OnMouseEnter()
     {
         isOver = true;
+        Debug.Log("entro");
+    }
+
+    private void OnMouseExit()
+    {
+        isOver = false;
+        Debug.Log("salio");
     }
 }
