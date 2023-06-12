@@ -6,15 +6,18 @@ using UnityEngine.UI;
 
 public class DradAndDrop : MonoBehaviour
 {
-    public bool isClicked;
     private Camera cam;
     private Vector3 dragOffset;
     private GameObject panel;
+    public MouseOverPanel mouseOverPanel;
+    private Transform spawnoPoint;
 
     private void Awake()
     {
         cam = Camera.main;
         panel = GameObject.FindGameObjectWithTag("Panel");
+        mouseOverPanel = panel.GetComponent<MouseOverPanel>();
+        //spawnoPoint = 
     }
 
     private void OnMouseDown()
@@ -24,7 +27,13 @@ public class DradAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        
+        //if (mouseOverPanel.isOver)
+        //{
+            //cambio su posición a spawnpoint y: detruyo si hago instanciate o desactivo si hago pooling.
+        //}
+        //Detectar si el mouse está sobre el panel.
+        //O sea, chequear si la posición del mouse (getmousepos) está sobre el panel.
+        //Para saber si está sobre el panel, llamar a (OnMouseOver) en el panel, ver si devuelve true.
     }
 
     private void OnMouseDrag()
