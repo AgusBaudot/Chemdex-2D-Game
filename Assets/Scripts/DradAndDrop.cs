@@ -10,13 +10,15 @@ public class DradAndDrop : MonoBehaviour
     private Vector3 dragOffset;
     private GameObject panel;
     public MouseOverPanel mouseOverPanel;
-    public Transform spawnPoint;
+    public Vector2 spawnPoint;
+    public bool returnToSpawn = true;
 
     private void Awake()
     {
         cam = Camera.main;
-        panel = GameObject.FindGameObjectWithTag("Panel");
-        mouseOverPanel = panel.GetComponent<MouseOverPanel>();
+        spawnPoint = new Vector3(transform.position.x, transform.position.y);
+        //panel = GameObject.FindGameObjectWithTag("Panel");
+        //mouseOverPanel = panel.GetComponent<MouseOverPanel>();
     }
 
     private void OnMouseDown()
@@ -26,16 +28,20 @@ public class DradAndDrop : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (mouseOverPanel.isOver)
-        {
-            transform.position = spawnPoint.transform.position;
-            //cambio su posición a spawnpoint y: detruyo si hago instanciate o desactivo si hago pooling.
-        }
+        //if (mouseOverPanel.isOver)
+        //{
+        //    transform.position = spawnPoint.transform.position;
+        //    //cambio su posición a spawnpoint y: detruyo si hago instanciate o desactivo si hago pooling.
+        //}
         //Detectar si el mouse está sobre el panel.
         //O sea, chequear si la posición del mouse (getmousepos) está sobre el panel.
         //Para saber si está sobre el panel, llamar a (OnMouseOver) en el panel, ver si devuelve true.
+        if (returnToSpawn)
+        {
+            Debug.Log("mouse up"); 
+            transform.position = spawnPoint;
+        }
     }
-
     private void OnMouseDrag()
     {
         transform.position = GetMousePos() + dragOffset;
