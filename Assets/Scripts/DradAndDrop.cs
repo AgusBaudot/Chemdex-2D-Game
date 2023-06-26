@@ -12,6 +12,7 @@ public class DradAndDrop : MonoBehaviour
     public MouseOverPanel mouseOverPanel;
     public Vector2 spawnPoint;
     public bool returnToSpawn = true;
+    [SerializeField] bool mouseUp = false;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class DradAndDrop : MonoBehaviour
     private void OnMouseDown()
     {
         dragOffset = transform.position - GetMousePos();
+        mouseUp = false;
     }
 
     private void OnMouseUp()
@@ -36,12 +38,17 @@ public class DradAndDrop : MonoBehaviour
         //Detectar si el mouse está sobre el panel.
         //O sea, chequear si la posición del mouse (getmousepos) está sobre el panel.
         //Para saber si está sobre el panel, llamar a (OnMouseOver) en el panel, ver si devuelve true.
-        if (returnToSpawn)
-        {
-            Debug.Log("mouse up"); 
-            transform.position = spawnPoint;
-        }
+
+
+
+        //if (returnToSpawn) Hacerlo despues
+        //{
+        //    Debug.Log("mouse up"); 
+        //    transform.position = spawnPoint;
+        //}
+        mouseUp = true;
     }
+
     private void OnMouseDrag()
     {
         transform.position = GetMousePos() + dragOffset;
@@ -52,5 +59,10 @@ public class DradAndDrop : MonoBehaviour
         var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         return mousePos;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
     }
 }

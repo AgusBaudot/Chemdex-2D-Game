@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 59134346}
   m_Layer: 6
   m_Name: Electron
-  m_TagString: Untagged
+  m_TagString: Electron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,6 +225,7 @@ MonoBehaviour:
   mouseOverPanel: {fileID: 0}
   spawnPoint: {x: 0, y: 0}
   returnToSpawn: 1
+  mouseUp: 0
 --- !u!58 &59134345
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -310,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &215381049
 Transform:
   m_ObjectHideFlags: 0
@@ -672,9 +673,10 @@ GameObject:
   - component: {fileID: 1310057073}
   - component: {fileID: 1310057074}
   - component: {fileID: 1310057075}
-  m_Layer: 6
+  - component: {fileID: 1310057076}
+  m_Layer: 7
   m_Name: Neutron
-  m_TagString: Untagged
+  m_TagString: Neutron
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -761,6 +763,7 @@ MonoBehaviour:
   mouseOverPanel: {fileID: 0}
   spawnPoint: {x: 0, y: 0}
   returnToSpawn: 1
+  mouseUp: 0
 --- !u!58 &1310057074
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -798,6 +801,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &1310057076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310057070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d02cc5cd5d713418be3acb8347243b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleCollider: {fileID: 0}
+  overlap: []
+  mask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1664470374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,9 +1031,9 @@ GameObject:
   - component: {fileID: 2118313562}
   - component: {fileID: 2118313563}
   - component: {fileID: 2118313564}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Proton
-  m_TagString: Untagged
+  m_TagString: Proton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,6 +1120,7 @@ MonoBehaviour:
   mouseOverPanel: {fileID: 0}
   spawnPoint: {x: 0, y: 0}
   returnToSpawn: 1
+  mouseUp: 0
 --- !u!58 &2118313563
 CircleCollider2D:
   m_ObjectHideFlags: 0
