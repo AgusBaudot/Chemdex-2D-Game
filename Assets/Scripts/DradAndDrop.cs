@@ -12,7 +12,7 @@ public class DradAndDrop : MonoBehaviour
     public MouseOverPanel mouseOverPanel;
     public Vector2 spawnPoint;
     public bool returnToSpawn = true;
-    [SerializeField] bool mouseUp = false;
+    public bool mouseUp = false;
 
     private void Awake()
     {
@@ -59,10 +59,5 @@ public class DradAndDrop : MonoBehaviour
         var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         return mousePos;
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        
     }
 }
